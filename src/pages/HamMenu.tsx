@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { toggleMenu } from "../reducers/actions";
+import { toggleMenu } from "../actions/actions";
 import { FaBars } from "react-icons/fa";
 
-const Navbar = () => {
+const HamMenu = () => {
   const menuOpen = useSelector((state) => state.navbar.menuOpen);
   const dispatch = useDispatch();
 
@@ -24,4 +24,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default HamMenu;
