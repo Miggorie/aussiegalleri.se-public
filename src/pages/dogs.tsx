@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import DogCard from "../components/DogCard";
+import dog from "./dog";
 
-function Dogs(props: any) {
+function Dogs(props: { dogs: { dogID: string }[] }) {
   const { dogs } = props;
+  console.log(dogs);
   return (
     <main>
-      <div>
-        {dogs.map((dog: any) => (
-          <DogCard key={dog.dogID} dog={dog} />
-        ))}
-      </div>
+      <div>{dog.name}</div>
     </main>
   );
 }

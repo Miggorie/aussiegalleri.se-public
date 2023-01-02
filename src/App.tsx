@@ -8,23 +8,13 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:8080/src/php/API.php", {
-        method: "GET",
-        mode: "no-cors",
-        credentials: "include",
-        headers: {
-          "Content-Type": "text/plain",
-        },
-      }).then((response) => {
-        if (!response.ok) {
-          throw `fel, [${response.status}] [${response.statusText}]`;
-        }
-        return response.json();
-      });
-      console.log(response);
-      const data = await response.json();
-      console.log(data);
-      setDogs(data);
+      try {
+        const response = await fetch("http://localhost:8080/src/php/API.php");
+        const data = await response.json();
+        setDogs(data);
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchData();
   }, []);
@@ -32,7 +22,9 @@ function App() {
   return (
     <div>
       <Header />
-      <Dogs dogs={dogs} />
+      {dogs.map((dog) => (
+        <Dogs key={dog.dogID} dog={dog} />
+      ))}
     </div>
   );
 }
