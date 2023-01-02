@@ -1,7 +1,16 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import DogCard from "../components/DogCard";
 
-function dogs() {
-  return <div></div>;
+function Dogs(props: any) {
+  const { dogs } = props;
+  return (
+    <main>
+      <div>
+        {dogs.map((dog: any) => (
+          <DogCard key={dog.dogID} dog={dog} />
+        ))}
+      </div>
+    </main>
+  );
 }
-
-export default dogs;
+export default Dogs;
