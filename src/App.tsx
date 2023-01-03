@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
-import Dogs from "./pages/dogs";
 import Header from "./components/Header";
+import DogList from "./pages/dogs";
 
 function App() {
   const [dogs, setDogs] = useState([]);
@@ -15,16 +14,19 @@ function App() {
       } catch (error) {
         console.log(error);
       }
+
+      // const renderDogs = dogs.map((dogs, dogID) => {
+      //   return <Dogs dogs={dogs} key={dogID} />;
     }
     fetchData();
   }, []);
 
+  console.log(dogs);
+
   return (
     <div>
       <Header />
-      {dogs.map((dog) => (
-        <Dogs key={dog.dogID} dog={dog} />
-      ))}
+      <DogList dogs={dogs} />
     </div>
   );
 }

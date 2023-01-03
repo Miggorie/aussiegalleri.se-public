@@ -1,14 +1,17 @@
-import { useState, useEffect } from "react";
 import DogCard from "../components/DogCard";
-import dog from "./dog";
 
-function Dogs(props: { dogs: { dogID: string }[] }) {
-  const { dogs } = props;
-  console.log(dogs);
-  return (
-    <main>
-      <div>{dog.name}</div>
-    </main>
-  );
+interface Dog {
+  dogID: number;
+  name: string;
 }
-export default Dogs;
+
+function DogList({ dogs }: { dogs: Array<Dog> }) {
+  console.log(dogs);
+  const renderedImages = dogs.map((dog) => {
+    return <DogCard key={dog.dogID} image={dog} />;
+  });
+
+  return <div className="image-list">{renderedImages}</div>;
+}
+
+export default DogList;

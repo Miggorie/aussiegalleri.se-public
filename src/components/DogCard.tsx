@@ -1,9 +1,9 @@
 import React from "react";
 
-function ProductCardItem(props: any) {
+function DogCardItem(props: any) {
   //importing props from Products.js
   const { dog } = props;
-  return <section>{dog.name}</section>;
+  return <section>{dog.dogID}</section>;
 }
 
-export default ProductCardItem;
+export default DogCardItem;
