@@ -8,20 +8,15 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:8080/src/php/API.php");
+        const response = await fetch("http://aussiegalleri.se/api/api.php");
         const data = await response.json();
-        setDogs(data);
+        setDogs(data.dogs);
       } catch (error) {
         console.log(error);
       }
-
-      // const renderDogs = dogs.map((dogs, dogID) => {
-      //   return <Dogs dogs={dogs} key={dogID} />;
     }
     fetchData();
   }, []);
-
-  console.log(dogs);
 
   return (
     <div>
