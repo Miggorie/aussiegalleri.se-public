@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
+$host = "aussiegalleri-202794.mysql.binero.se";
 $db = "202794-aussiegalleri";
-$username = "root";
-$pass = "root";
+$username = "202794_oo25539";
+$pass = "gkRQbl09zx";
 $charset = "utf8mb4";
 
 // Create connection
