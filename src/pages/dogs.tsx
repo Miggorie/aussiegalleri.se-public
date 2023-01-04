@@ -1,4 +1,6 @@
 import DogCard from "../components/DogCard";
+import { DogGridContainer, DogCardContainer } from "./css/dogsStyle";
+import SearchAndFilter from "../components/SearchAndFilter";
 
 export interface Dog {
   dogID: string;
@@ -10,20 +12,26 @@ export interface Dog {
 
 function DogList({ dogs }: { dogs: Array<Dog> }) {
   console.log(dogs);
-  const renderedImages = dogs.map((dog) => {
+  const renderedDogs = dogs.map((dog) => {
     return (
-      <DogCard
-        key={dog.dogID}
-        standLeft={dog.standLeft}
-        url={dog.url}
-        name={dog.name}
-        dogID={dog.dogID}
-        date={dog.date}
-      />
+      <DogCardContainer key={dog.dogID}>
+        <DogCard
+          standLeft={dog.standLeft}
+          url={dog.url}
+          name={dog.name}
+          dogID={dog.dogID}
+          date={dog.date}
+        />
+      </DogCardContainer>
     );
   });
 
-  return <div className="image-list">{renderedImages}</div>;
+  return (
+    <div>
+      <SearchAndFilter />
+      <DogGridContainer>{renderedDogs}</DogGridContainer>
+    </div>
+  );
 }
 
 export default DogList;
