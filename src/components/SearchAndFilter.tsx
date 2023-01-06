@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { FaSearch } from "react-icons/fa";
-import {
-  SearchBarContainer,
-  SearchBarInput,
-  SearchBarButton,
-} from "./css/SearchBarStyle";
+import SearchBar from "./SearchBar";
+
 import {
   DropdownContainer,
   DropdownButton,
@@ -33,17 +29,6 @@ const Dropdown = ({ buttonText, options }: DropdownProps) => {
     </DropdownContainer>
   );
 };
-
-function SearchBar() {
-  return (
-    <SearchBarContainer>
-      <SearchBarInput placeholder="Sök efter hund" />
-      <SearchBarButton>
-        <FaSearch />
-      </SearchBarButton>
-    </SearchBarContainer>
-  );
-}
 
 const SearchAndDropdownContainer = styled.div`
   display: flex;

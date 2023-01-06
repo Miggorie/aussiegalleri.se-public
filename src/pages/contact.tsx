@@ -1,7 +1,11 @@
 import React from "react";
 
 function contact() {
-  return <div></div>;
+  return (
+    <div>
+      <form></form>
+    </div>
+  );
 }
 
 export default contact;
