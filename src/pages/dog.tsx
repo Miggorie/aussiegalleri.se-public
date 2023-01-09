@@ -1,10 +1,16 @@
-import { useState } from "react";
 import useDogContext from "../hooks/use-dog-context";
 
-function dog() {
-  const [singleDog, setSingleDog] = useState([]);
-  const { dogs } = useDogContext();
-  return <div></div>;
+function SingleDog() {
+  // const { dogs } = useDogContext();
+  // const dog = dogs.find((item) => {
+  //   item.dogID === "140";
+  // });
+  return (
+    <div>
+      Enskild hund
+      {/* {dog!.dogID} */}
+    </div>
+  );
 }
 
-export default dog;
+export default SingleDog;

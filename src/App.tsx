@@ -2,7 +2,13 @@ import React, { useEffect, useContext } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import DogList from "./pages/dogs";
+import SingleDog from "./pages/dog";
+import About from "./pages/about";
+import Faq from "./pages/faq";
+import Contact from "./pages/contact";
+import Home from "./pages/home";
 import DogsContext from "./context/DogsContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const { fetchData } = useContext(DogsContext);
@@ -13,9 +19,18 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <DogList />
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="dogs" element={<DogList />} />
+          <Route path="dog" element={<SingleDog />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="faq" element={<Faq />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
