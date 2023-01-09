@@ -1,6 +1,7 @@
 import DogCard from "../components/DogCard";
 import { DogGridContainer, DogCardContainer } from "./css/dogsStyle";
 import SearchAndFilter from "../components/SearchAndFilter";
+import useDogContext from "../hooks/use-dog-context";
 
 export interface Dog {
   dogID: string;
@@ -10,8 +11,8 @@ export interface Dog {
   date: string;
 }
 
-function DogList({ dogs }: { dogs: Array<Dog> }) {
-  console.log(dogs);
+function DogList() {
+  const { dogs } = useDogContext();
   const renderedDogs = dogs.map((dog) => {
     return (
       <DogCardContainer key={dog.dogID}>
