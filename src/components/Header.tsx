@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const AppHeader = styled.header`
-  background-color: #333;
-  color: white;
+  background-color: #75866d;
+  color: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: space-between;

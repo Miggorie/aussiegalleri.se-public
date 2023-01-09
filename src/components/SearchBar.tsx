@@ -4,7 +4,7 @@ import {
   SearchBarContainer,
   SearchBarInput,
   SearchBarButton,
-} from "./css/SearchBarStyle";
+} from "./css/search-bar-style";
 
 function SearchBar() {
   const [search, setDogSearch] = useState([]);

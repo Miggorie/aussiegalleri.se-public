@@ -5,8 +5,8 @@ export const FooterContainer = styled.footer`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #333;
-  color: #fff;
+  background-color: #75866d;
+  color: #f7f7f7;
 `;
 
 export const FooterSocialContainer = styled.div`
@@ -16,7 +16,7 @@ export const FooterSocialContainer = styled.div`
 export const FooterSocialLink = styled.a`
   display: block;
   padding: 0.5rem;
-  color: #fff;
+  color: #f7f7f7;
 `;
 
 export const FooterText = styled.div`

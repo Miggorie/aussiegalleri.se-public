@@ -1,6 +1,7 @@
-import { Dog } from "../pages/dogs";
 import { Container, Img, Name } from "./css/dog-card";
-import { useNavigate } from "react-router-dom";
+import useDogContext from "../hooks/use-dog-context";
+import { Dog } from "../pages/dogs";
+// import { useNavigate } from "react-router-dom";
 
 // const handleClick = () => {
 //   const navigate = useNavigate();
@@ -8,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 // };
 
 function DogCardItem(dog: Dog) {
+  const { dogs } = useDogContext();
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/" + dog.date + "/";
   return (
     <Container>

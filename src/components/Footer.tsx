@@ -5,7 +5,7 @@ import {
   FooterSocialContainer,
   FooterSocialLink,
   FooterText,
-} from "./FooterStyles";
+} from "./css/footer-styles";
 
 const Footer = () => {
   return (

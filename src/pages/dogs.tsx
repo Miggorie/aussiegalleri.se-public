@@ -1,5 +1,5 @@
 import DogCard from "../components/DogCard";
-import { DogGridContainer, DogCardContainer } from "./css/dogsStyle";
+import { DogGridContainer, DogCardContainer } from "./css/dogs-style";
 import SearchAndFilter from "../components/SearchAndFilter";
 import useDogContext from "../hooks/use-dog-context";
 
@@ -17,7 +17,7 @@ function DogList() {
     return (
       <DogCardContainer key={dog.dogID}>
         <DogCard
-          standLeft={dog.standLeft}
+          standLeft={dog.standLeft} // Add the standLeft prop here
           url={dog.url}
           name={dog.name}
           dogID={dog.dogID}
