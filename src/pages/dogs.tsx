@@ -7,6 +7,8 @@ export interface Dog {
   dogID: string;
   name: string;
   standLeft: string;
+  standRight: string;
+  headShot: string;
   url: string;
   date: string;
 }
@@ -17,7 +19,9 @@ function DogList() {
     return (
       <DogCardContainer key={dog.dogID}>
         <DogCard
-          standLeft={dog.standLeft} // Add the standLeft prop here
+          standLeft={dog.standLeft}
+          standRight={dog.standRight}
+          headShot={dog.headShot}
           url={dog.url}
           name={dog.name}
           dogID={dog.dogID}

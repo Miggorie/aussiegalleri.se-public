@@ -1,16 +1,66 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import useDogContext from "../hooks/use-dog-context";
+import {
+  Container,
+  Image,
+  TextContainer,
+  Title,
+  Line,
+  ImageContainer,
+} from "./css/dog-style";
+import { Dog } from "./dogs";
+import GetLitterMates from "../components/dogcomponents/GetLitterMates";
+
+const baseUrl = "http://aussiegalleri.se/images/";
 
 function SingleDog() {
-  // const { dogs } = useDogContext();
-  // const dog = dogs.find((item) => {
-  //   item.dogID === "140";
-  // });
+  const { name } = useParams();
+  const { fetchData, dogs } = useDogContext();
+  const [currentDog, setCurrentDog] = useState<Dog | null | undefined>(null);
+
+  useEffect(() => {
+    async function fetchSingleDog() {
+      await fetchData();
+      const currentDog = dogs.find((dog) => dog.url === name);
+      setCurrentDog(currentDog ? currentDog : null);
+    }
+    fetchSingleDog();
+  }, [name]);
+
   return (
     <div>
-      Enskild hund
-      {/* {dog!.dogID} */}
+      {currentDog ? (
+        <>
+          <Container>
+            <Image
+              src={baseUrl + currentDog.date + "/" + currentDog.headShot}
+            />
+            <TextContainer>
+              <p>Name: {currentDog.name}</p>
+              <p>Born: {currentDog.dogID}</p>
+            </TextContainer>
+            <ImageContainer>
+              <Image
+                src={baseUrl + currentDog.date + "/" + currentDog.standRight}
+              />
+              <Image
+                src={baseUrl + currentDog.date + "/" + currentDog.standLeft}
+              />
+            </ImageContainer>
+            <Title>Släktingar i galleriet</Title>
+            <div>
+              <Image src={currentDog.standLeft} />
+              <Image src={currentDog.standLeft} />
+            </div>
+            <GetLitterMates currentDog={currentDog} />
+            <Line />
+          </Container>
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 }
-
 export default SingleDog;
