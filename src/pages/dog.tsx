@@ -12,6 +12,7 @@ import {
 import { Dog } from "../components/Interfaces";
 import GetLitterMates from "../components/getlittercomponents/GetLitterMates";
 import GetFather from "../components/getfathercomponents/GetFather";
+import GetParentsInfo from "../components/getparentsinfo/GetParentsInfo";
 
 const baseUrl = "http://aussiegalleri.se/images/";
 
@@ -29,6 +30,14 @@ function SingleDog() {
     fetchSingleDog();
   }, [name]);
 
+  // if (currentDog && currentDog.isBitch === "1") {
+  //   currentDog.isBitch = "Hane";
+  // } else if (currentDog && currentDog.isBitch !== "1") {
+  //   currentDog.isBitch = "Tik";
+  // } else {
+  //   console.log("inget kön hittat");
+  // }
+
   return (
     <div>
       {currentDog ? (
@@ -38,8 +47,12 @@ function SingleDog() {
               src={baseUrl + currentDog.date + "/" + currentDog.headShot}
             />
             <TextContainer>
-              <p>Name: {currentDog.name}</p>
-              <p>Born: {currentDog.dogID}</p>
+              <h3>{currentDog.name}</h3>
+              <p>{currentDog.gender}</p>
+              <GetParentsInfo currentDog={currentDog} />
+              <p>
+                Fotograferad den {currentDog.date} i {currentDog.place}
+              </p>
             </TextContainer>
             <ImageContainer>
               <Image

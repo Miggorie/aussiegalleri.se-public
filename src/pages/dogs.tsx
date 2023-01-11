@@ -16,6 +16,7 @@ function DogList() {
           name={dog.name}
           dogID={dog.dogID}
           date={dog.date}
+          gender={dog.gender}
         />
       </DogCardContainer>
     );

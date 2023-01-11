@@ -1,5 +1,6 @@
+import { useRef, useEffect } from "react";
 import styled from "styled-components";
-import useDogContext from "../hooks/use-dog-context";
+import { Dog } from "../components/Interfaces";
 
 export const Container = styled.div`
   display: flex;
@@ -30,24 +31,47 @@ export const Button = styled.div`
   border-radius: 1rem;
 `;
 
-const Home: React.FC = () => {
-  const { dogs } = useDogContext();
-  const lastFourDogs = dogs.slice(-4);
-  // const baseUrl = "http://aussiegalleri.se/images/thumbnails/" + dog.date + "/";
+const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
+
+async function fetchLatestDogs() {
+  try {
+    const response = await fetch(
+      "http://aussiegalleri.se/api/search/latestdogs.php"
+    );
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+const Home = () => {
+  const latestDogs = useRef([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await fetchLatestDogs();
+      latestDogs.current = data.dogs;
+      console.log(data);
+    }
+    fetchData();
+  }, []);
 
   return (
     <Container>
       <div>Bild här</div>
       <Button>Se hundarna</Button>
-      <div>Senaste hundarna i galleriet</div>
-      <Section>
-        {/* {lastFourDogs.map((dog) => (
+      {latestDogs.current &&
+        latestDogs.current.map((dog: Dog) => (
           <div key={dog.dogID}>
-            <img src={baseUrl + dog.standLeft} alt="hund" />
-            <h4>{dog.name}</h4>
+            <img src={baseUrl + dog.date + "/" + dog.standLeft} />
+            <p>{dog.name}</p>
           </div>
-        ))} */}
-      </Section>
+        ))}
     </Container>
   );
 };

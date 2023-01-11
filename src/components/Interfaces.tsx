@@ -7,4 +7,14 @@ export interface Dog {
   url: string;
   date: string;
   litterID?: string;
+  isBitch?: string;
+  place?: string;
+  gender?: string;
+}
+
+export interface Litter {
+  sire: string;
+  dam: string;
+  born: string;
+  litterID: string;
 }

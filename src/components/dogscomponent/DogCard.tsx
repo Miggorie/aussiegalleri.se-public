@@ -1,10 +1,8 @@
 import { Container, Img, Name } from "./DogCardStyles";
-import useDogContext from "../../hooks/use-dog-context";
 import { Dog } from "../Interfaces";
 import { Link } from "react-router-dom";
 
 function DogCardItem(dog: Dog) {
-  const { dogs } = useDogContext();
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/" + dog.date + "/";
   return (
     <Container>

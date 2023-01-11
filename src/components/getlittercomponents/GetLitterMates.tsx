@@ -23,6 +23,7 @@ const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
           throw new Error(response.statusText);
         }
         const data = await response.json();
+        console.log(data);
         litter.current = data.littermates;
       } catch (error) {
         console.error(error);
