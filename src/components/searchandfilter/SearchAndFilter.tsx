@@ -7,7 +7,7 @@ import {
   DropdownButton,
   DropdownMenu,
   DropdownItem,
-} from "./css/dropdown-style";
+} from "./DropdownStyles";
 
 interface DropdownProps {
   buttonText: string;

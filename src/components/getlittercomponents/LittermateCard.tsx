@@ -1,4 +1,4 @@
-import { Container, Img, Name } from "../css/dog-card";
+import { Container, Img, Name } from "../dogscomponent/DogCardStyles";
 import { Dog } from "../Interfaces";
 import { Link } from "react-router-dom";
 

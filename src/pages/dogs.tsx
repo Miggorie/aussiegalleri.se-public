@@ -1,6 +1,6 @@
-import DogCard from "../components/DogCard";
+import DogCard from "../components/dogscomponent/DogCard";
 import { DogGridContainer, DogCardContainer } from "./css/dogs-style";
-import SearchAndFilter from "../components/SearchAndFilter";
+import SearchAndFilter from "../components/searchandfilter/SearchAndFilter";
 import useDogContext from "../hooks/use-dog-context";
 
 function DogList() {

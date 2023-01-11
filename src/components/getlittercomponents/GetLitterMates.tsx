@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Dog } from "../Interfaces";
 import LittermateCard from "./LittermateCard";
+import { DogsContainer } from "./GetLitterMatesStyles";
 
 interface Props {
   currentDog: Dog;
@@ -22,7 +23,6 @@ const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
           throw new Error(response.statusText);
         }
         const data = await response.json();
-        console.log(data.littermates);
         litter.current = data.littermates;
       } catch (error) {
         console.error(error);
@@ -39,7 +39,7 @@ const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
     litter.current &&
     litter.current.map((littermate: Dog) => {
       return (
-        <div key={littermate.dogID}>
+        <DogsContainer key={littermate.dogID}>
           <LittermateCard
             standLeft={littermate.standLeft}
             standRight={littermate.standRight}
@@ -49,11 +49,11 @@ const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
             dogID={littermate.dogID}
             date={littermate.date}
           />
-        </div>
+        </DogsContainer>
       );
     });
 
-  return <div>{renderedDogs}</div>;
+  return <DogsContainer>{renderedDogs}</DogsContainer>;
 };
 
 export default GetLitterMates;

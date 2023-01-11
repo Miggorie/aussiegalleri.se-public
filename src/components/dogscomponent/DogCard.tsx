@@ -1,6 +1,6 @@
-import { Container, Img, Name } from "./css/dog-card";
-import useDogContext from "../hooks/use-dog-context";
-import { Dog } from "../components/Interfaces";
+import { Container, Img, Name } from "./DogCardStyles";
+import useDogContext from "../../hooks/use-dog-context";
+import { Dog } from "../Interfaces";
 import { Link } from "react-router-dom";
 
 function DogCardItem(dog: Dog) {

@@ -10,7 +10,8 @@ import {
   ImageContainer,
 } from "./css/dog-style";
 import { Dog } from "../components/Interfaces";
-import GetLitterMates from "../components/dogcomponents/GetLitterMates";
+import GetLitterMates from "../components/getlittercomponents/GetLitterMates";
+import GetFather from "../components/getfathercomponents/GetFather";
 
 const baseUrl = "http://aussiegalleri.se/images/";
 
@@ -49,7 +50,7 @@ function SingleDog() {
               />
             </ImageContainer>
             <Title>Släktingar i galleriet</Title>
-            <div></div>
+            <GetFather currentDog={currentDog} />
             <GetLitterMates currentDog={currentDog} />
             <Line />
           </Container>
