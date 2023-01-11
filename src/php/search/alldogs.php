@@ -1,5 +1,5 @@
 <?php
-require('config.php');
+require(__DIR__ . '/../config.php');
 $sql = "SELECT * FROM dog
 INNER JOIN images ON dog.dogID = images.dogID
 INNER JOIN event ON images.eventID = event.eventID
