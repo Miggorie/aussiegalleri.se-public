@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from "react";
 import Footer from "./components/footercomponent/Footer";
-import Header from "./components/headercomponent/Header";
+import Header from "./components/headercomponent/Navbar";
 import DogList from "./pages/dogs";
 import SingleDog from "./pages/dog";
 import About from "./pages/about";
 import Faq from "./pages/faq";
 import Contact from "./pages/contact";
-import Home from "./pages/home";
+import Home from "./pages/home/home";
 import DogsContext from "./context/DogsContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
