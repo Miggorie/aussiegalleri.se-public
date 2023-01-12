@@ -11,8 +11,9 @@ import {
 } from "./css/dog-style";
 import { Dog } from "../components/Interfaces";
 import GetLitterMates from "../components/getlittercomponents/GetLitterMates";
-import GetFather from "../components/getfathercomponents/GetFather";
 import GetParentsInfo from "../components/getparentsinfo/GetParentsInfo";
+import GetFather from "../components/getfathercomponents/GetFather";
+import GetMother from "../components/getmothercomponents/GetMother";
 
 const baseUrl = "http://aussiegalleri.se/images/";
 
@@ -28,15 +29,7 @@ function SingleDog() {
       setCurrentDog(currentDog ? currentDog : null);
     }
     fetchSingleDog();
-  }, [name]);
-
-  // if (currentDog && currentDog.isBitch === "1") {
-  //   currentDog.isBitch = "Hane";
-  // } else if (currentDog && currentDog.isBitch !== "1") {
-  //   currentDog.isBitch = "Tik";
-  // } else {
-  //   console.log("inget kön hittat");
-  // }
+  }, []);
 
   return (
     <div>
@@ -47,9 +40,12 @@ function SingleDog() {
               src={baseUrl + currentDog.date + "/" + currentDog.headShot}
             />
             <TextContainer>
-              <h3>{currentDog.name}</h3>
+              <h2>{currentDog.name}</h2>
               <p>{currentDog.gender}</p>
-              <GetParentsInfo currentDog={currentDog} />
+              <GetParentsInfo
+                key={currentDog.litterID}
+                currentDog={currentDog}
+              />
               <p>
                 Fotograferad den {currentDog.date} i {currentDog.place}
               </p>
@@ -63,8 +59,10 @@ function SingleDog() {
               />
             </ImageContainer>
             <Title>Släktingar i galleriet</Title>
-            <GetFather currentDog={currentDog} />
-            <GetLitterMates currentDog={currentDog} />
+            <h2>Föräldrar</h2>
+            <GetFather key={currentDog.name} currentDog={currentDog} />
+            <GetMother key={currentDog.date} currentDog={currentDog} />
+            <GetLitterMates key={currentDog.dogID} currentDog={currentDog} />
             <Line />
           </Container>
         </>
@@ -74,4 +72,5 @@ function SingleDog() {
     </div>
   );
 }
+
 export default SingleDog;

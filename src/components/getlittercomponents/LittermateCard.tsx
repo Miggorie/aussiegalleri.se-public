@@ -1,20 +1,18 @@
-import { Container, Img, Name } from "../dogscomponent/DogCardStyles";
 import { Dog } from "../Interfaces";
 import { Link } from "react-router-dom";
 
-function DogCardItem(littermate: Dog) {
+function LittermateCard(littermate: Dog) {
   const baseUrl =
     "http://aussiegalleri.se/images/thumbnails/" + littermate.date + "/";
+
   return (
-    <Container>
-      <section>
-        <Link to={`/dogs/${littermate.url}`}>
-          <Img src={baseUrl + littermate.standLeft} alt="hund" />
-          <Name>{littermate.name}</Name>
-        </Link>
-      </section>
-    </Container>
+    <section>
+      <Link to={`/dogs/${littermate.url}`}>
+        <img src={baseUrl + littermate.standLeft} alt="hund" />
+        <div>{littermate.name}</div>
+      </Link>
+    </section>
   );
 }
 
-export default DogCardItem;
+export default LittermateCard;

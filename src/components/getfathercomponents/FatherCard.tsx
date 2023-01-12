@@ -2,7 +2,7 @@ import { Container, Img, Name } from "../dogscomponent/DogCardStyles";
 import { Dog } from "../Interfaces";
 import { Link } from "react-router-dom";
 
-function DogCardItem(father: Dog) {
+function FatherCardItem(father: Dog) {
   const baseUrl =
     "http://aussiegalleri.se/images/thumbnails/" + father.date + "/";
   return (
@@ -17,4 +17,4 @@ function DogCardItem(father: Dog) {
   );
 }
 
-export default DogCardItem;
+export default FatherCardItem;

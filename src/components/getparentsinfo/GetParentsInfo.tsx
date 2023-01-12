@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Dog } from "../Interfaces";
 import { Litter } from "../Interfaces";
 import ParentInfoCard from "./ParentInfoCard";
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const GetParentsInfo: React.FC<Props> = ({ currentDog }) => {
-  const parentInfo = useRef([]);
+  const [parents, setParents] = useState([]);
   const currentUrl =
     "http://aussiegalleri.se/api/singledog/litterinfo.php?url=" +
     currentDog.url;
@@ -22,7 +22,7 @@ const GetParentsInfo: React.FC<Props> = ({ currentDog }) => {
         }
         const data = await response.json();
         console.log(data);
-        parentInfo.current = data.parents;
+        setParents(data.litter);
       } catch (error) {
         console.error(error);
       }
@@ -30,14 +30,9 @@ const GetParentsInfo: React.FC<Props> = ({ currentDog }) => {
     fetchParentsInfo();
   }, [currentDog.dogID]);
 
-  if (!currentDog.litterID) {
-    return <></>;
-  }
-
-  const renderedDogs =
-    parentInfo.current &&
-    parentInfo.current.map((parents: Litter) => {
-      return (
+  return (
+    <div>
+      {parents?.map((parents: Litter) => (
         <div key={parents.litterID}>
           <ParentInfoCard
             dam={parents.dam}
@@ -46,10 +41,9 @@ const GetParentsInfo: React.FC<Props> = ({ currentDog }) => {
             litterID={parents.litterID}
           ></ParentInfoCard>
         </div>
-      );
-    });
-
-  return <div>{renderedDogs}</div>;
+      ))}
+    </div>
+  );
 };
 
 export default GetParentsInfo;

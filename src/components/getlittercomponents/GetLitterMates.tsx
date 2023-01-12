@@ -1,60 +1,47 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Dog } from "../Interfaces";
 import LittermateCard from "./LittermateCard";
-import { DogsContainer } from "./GetLitterMatesStyles";
 
 interface Props {
   currentDog: Dog;
 }
 
 const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
-  const baseUrl =
-    "http://aussiegalleri.se/images/thumbnails/" + currentDog.date + "/";
-  const litter = useRef([]);
+  const [littermate, setLittermate] = useState([]);
   const currentUrl =
     "http://aussiegalleri.se/api/singledog/getlittermates.php?url=" +
     currentDog.url;
 
   useEffect(() => {
-    async function fetchLittermates() {
+    async function fetchLitterMate() {
       try {
         const response = await fetch(currentUrl);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
         const data = await response.json();
-        console.log(data);
-        litter.current = data.littermates;
+        setLittermate(data.littermates);
       } catch (error) {
         console.error(error);
       }
     }
-    fetchLittermates();
-  }, [currentDog.dogID]);
+    fetchLitterMate();
+  }, []);
 
-  if (!currentDog.litterID) {
-    return <></>;
-  }
-
-  const renderedDogs =
-    litter.current &&
-    litter.current.map((littermate: Dog) => {
-      return (
-        <DogsContainer key={littermate.dogID}>
-          <LittermateCard
-            standLeft={littermate.standLeft}
-            standRight={littermate.standRight}
-            headShot={littermate.headShot}
-            url={littermate.url}
-            name={littermate.name}
-            dogID={littermate.dogID}
-            date={littermate.date}
-          />
-        </DogsContainer>
-      );
-    });
-
-  return <DogsContainer>{renderedDogs}</DogsContainer>;
+  return (
+    <div>
+      <h2>Helsyskon</h2>
+      {littermate?.map((littermate: Dog) => (
+        <LittermateCard
+          key={littermate.dogID}
+          standLeft={littermate.standLeft}
+          url={littermate.url}
+          name={littermate.name}
+          date={littermate.date}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default GetLitterMates;
