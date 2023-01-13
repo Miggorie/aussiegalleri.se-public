@@ -19,14 +19,14 @@ function Nav() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <a
-                    href="#"
+                    href="http://localhost:8888"
                     className=" hover:bg-stone-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Hem
                   </a>
 
                   <a
-                    href="#"
+                    href="http://localhost:8888/dogs"
                     className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Galleriet
