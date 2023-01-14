@@ -18,3 +18,9 @@ export interface Litter {
   born: string;
   litterID: string;
 }
+
+export interface FaqItem {
+  id?: string;
+  label?: string;
+  content?: string;
+}

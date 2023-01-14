@@ -1,4 +1,3 @@
-import { Container, Img, Name } from "../dogscomponent/DogCardStyles";
 import { Dog } from "../Interfaces";
 import { Link } from "react-router-dom";
 
@@ -6,14 +5,14 @@ function FatherCardItem(father: Dog) {
   const baseUrl =
     "http://aussiegalleri.se/images/thumbnails/" + father.date + "/";
   return (
-    <Container>
+    <div>
       <section>
         <Link to={`/dogs/${father.url}`}>
-          <Img src={baseUrl + father.standLeft} alt="hund" />
-          <Name>{father.name}</Name>
+          <img src={baseUrl + father.standLeft} alt="hund" />
+          <div>{father.name}</div>
         </Link>
       </section>
-    </Container>
+    </div>
   );
 }
 

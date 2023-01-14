@@ -33,21 +33,21 @@ function Nav() {
                   </a>
 
                   <a
-                    href="#"
+                    href="http://localhost:8888/faq"
                     className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     FAQ
                   </a>
 
                   <a
-                    href="#"
+                    href="/"
                     className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Om galleriet
                   </a>
 
                   <a
-                    href="#"
+                    href="/"
                     className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Kontakt
@@ -115,35 +115,35 @@ function Nav() {
             <div className="md:hidden" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a
-                  href="#"
+                  href="/"
                   className="hover:bg-stone-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Hem
                 </a>
 
                 <a
-                  href="#"
+                  href="/"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Galleriet
                 </a>
 
                 <a
-                  href="#"
+                  href="/"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   FAQ
                 </a>
 
                 <a
-                  href="#"
+                  href="/"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Om galleriet
                 </a>
 
                 <a
-                  href="#"
+                  href="/"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Kontakt
@@ -153,18 +153,6 @@ function Nav() {
           )}
         </Transition>
       </nav>
-
-      <header className="bg-white shadow">
-        {/* <!-- Line --> 
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"></div>*/}
-      </header>
-      <main>
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          {/* <!-- Replace with your content --> */}
-          <div className="px-4 py-6 sm:px-0"></div>
-          {/* <!-- /End replace --> */}
-        </div>
-      </main>
     </div>
   );
 }
