@@ -1,4 +1,25 @@
+import { useState, useEffect } from "react";
+import { CountDogs } from "../../Interfaces";
+import axios from "axios";
+
 const AllDogStatistics = () => {
+  const [dogcount, setDogcount] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://aussiegalleri.se/api/statistics/statistics.php"
+        );
+        const data = response.data;
+        console.log(data);
+        setDogcount(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col lg:items-center lg:flex-row">
@@ -18,9 +39,14 @@ const AllDogStatistics = () => {
               />
             </svg>
           </div>
-          <h3 className="text-4xl font-extrabold sm:text-5xl xl:text-6xl">
-            9 312 435
-          </h3>
+          {dogcount?.map((dogcount: CountDogs) => (
+            <h3 className="text-4xl font-extrabold sm:text-5xl xl:text-6xl">
+              {dogcount.total_dogs}
+              <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+                Aussies i galleriet
+              </p>
+            </h3>
+          ))}
         </div>
         <div className="lg:w-1/2">
           <p className="text-gray-800">

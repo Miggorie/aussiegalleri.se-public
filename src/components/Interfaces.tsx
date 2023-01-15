@@ -24,3 +24,11 @@ export interface FaqItem {
   label?: string;
   content?: string;
 }
+
+export interface CountDogs {
+  total_dogs: number;
+  total_females: number;
+  total_males: number;
+  total_adults: number;
+  total_pups: number;
+}
