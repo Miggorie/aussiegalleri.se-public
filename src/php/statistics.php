@@ -1,35 +1,32 @@
 <?php
-require('config.php');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require(__DIR__ . '/../config.php');
 
-$numberOfDogs= "SELECT COUNT(*)
-FROM dog";
-$bitches="SELECT COUNT(*)
+// SQL Query
+$sql = "SELECT 
+    COUNT(*) as total_dogs,
+    COUNT(CASE WHEN isBitch = 0 THEN 1 END) as total_females,
+    COUNT(CASE WHEN isBitch = 1 THEN 1 END) as total_males,
+    COUNT(CASE WHEN isPuppy = 1 THEN 1 END) as total_adults,
+    COUNT(CASE WHEN isPuppy = 0 THEN 1 END) as total_pups
 FROM dog
-WHERE isBitch=0";
-$dogsCount="SELECT COUNT(*)
-FROM dog
-WHERE isBitch=1";
-$pupcount="SELECT COUNT(*)
-FROM dog
-INNER JOIN images on dog.dogID = images.dogID
-WHERE isPuppy=0";
+INNER JOIN images ON dog.dogID = images.dogID";
+
+// Execute query
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$dogcount = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Return as JSON
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin:*');
+echo json_encode($dogcount);
 
 
-$result = $conn->query($numberOfDogs);
-$row = mysqli_fetch_row($result);
-$totalDogs= $row[0];
-
-$result = $conn->query($bitches);
-$row = mysqli_fetch_row($result);
-$bitchesCount= $row[0];
-
-$result = $conn->query($dogsCount);
-$row = mysqli_fetch_row($result);
-$dogs= $row[0];
-
-$result = $conn->query($pupcount);
-$row = mysqli_fetch_row($result);
-$puppycount= $row[0];
-
-$conn->close();
+// $dogcount = $stmt->fetchAll();
+// $data = ['dogcount'=>$dogcount];
+// header('Content-Type: application/json');
+// header('Access-Control-Allow-Origin:*');
+// echo json_encode($data);
 ?> 
