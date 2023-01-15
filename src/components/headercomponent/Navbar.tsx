@@ -40,14 +40,14 @@ function Nav() {
                   </a>
 
                   <a
-                    href="/"
+                    href="http://localhost:8888/about"
                     className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Om galleriet
                   </a>
 
                   <a
-                    href="/"
+                    href="http://localhost:8888/Contact"
                     className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Kontakt
