@@ -18,13 +18,19 @@ function Faq() {
       id: "3",
       label: "Hur får jag information om när ni ska fotografera?",
       content:
-        "You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.",
+        "Det bästa är att följa aussiegalleriet på Instagram och Facebook. Framförallt sker informationen om fototräffar på Instagram.",
     },
     {
       id: "4",
       label: "Vad ska jag tänka på inför fotograferingen?",
       content:
         "You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.",
+    },
+    {
+      id: "4",
+      label: "Kan jag skicka in egna bilder?",
+      content:
+        "På grund av Copywrightskäl kan du inte skicka in dina egna bilder.",
     },
   ];
 

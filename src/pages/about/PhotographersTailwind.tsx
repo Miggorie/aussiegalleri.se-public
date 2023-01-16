@@ -1,42 +1,25 @@
+import ElinsBild from "../../images/elin.jpg";
+import LinasBild from "../../images/lina.jpg";
+import EmeliasBild from "../../images/emelia.jpg";
+import JalmasBild from "../../images/jalma.jpg";
+
 const Photographers = () => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
           <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-            Core Team
+            Eldsjälarna bakom galleriet
           </p>
         </div>
         <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
           <span className="relative inline-block">
-            <svg
-              viewBox="0 0 52 24"
-              fill="currentColor"
-              className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-            >
-              <defs>
-                <pattern
-                  id="1d4040f3-9f3e-4ac7-b117-7d4009658ced"
-                  x="0"
-                  y="0"
-                  width=".135"
-                  height=".30"
-                >
-                  <circle cx="1" cy="1" r=".7" />
-                </pattern>
-              </defs>
-              <rect
-                fill="url(#1d4040f3-9f3e-4ac7-b117-7d4009658ced)"
-                width="52"
-                height="24"
-              />
-            </svg>
             <span className="relative">Möt våra</span>
           </span>{" "}
-          talangfulla fotografer och utvecklare
+          duktiga fotografer och utvecklare
         </h2>
         <p className="text-base text-gray-700 md:text-lg">
-          Här är teamet som ser till att aussiegalleriet existerar.
+          Här är teamet som ser till att aussiegalleriet expanderar.
         </p>
       </div>
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -44,14 +27,16 @@ const Photographers = () => {
           <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
             <img
               className="object-cover w-full h-56 md:h-64 xl:h-80 rounded-lg"
-              src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+              src={JalmasBild}
               alt="Person"
             />
             <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
               <p className="mb-1 text-lg font-bold text-gray-100">
                 Jalma Ingman
               </p>
-              <p className="mb-4 text-xs text-gray-100">Grundare</p>
+              <p className="mb-4 text-xs text-gray-100">
+                Grundare, Fotograf och Utvecklare
+              </p>
               <p className="mb-4 text-xs tracking-wide text-gray-400">
                 Jalma grundade aussiegalleriet och tog de första bilderna och
                 skapade den första hemsidan! Jalma utgår från Stockholm.
@@ -81,12 +66,14 @@ const Photographers = () => {
           <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
             <img
               className="object-cover w-full h-56 md:h-64 xl:h-80 rounded-lg"
-              src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt="Person"
+              src={ElinsBild}
+              alt="Elin"
             />
             <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
               <p className="mb-1 text-lg font-bold text-gray-100">Elin</p>
-              <p className="mb-4 text-xs text-gray-100">Fotograf</p>
+              <p className="mb-4 text-xs text-gray-100">
+                Fotograf och Utvecklare
+              </p>
               <p className="mb-4 text-xs tracking-wide text-gray-400">
                 Elin har fotograferat många hundra hundar till galleriet genom
                 åren, och även utvecklat den nuvarande hemsidan. Elin utgår från
@@ -117,15 +104,16 @@ const Photographers = () => {
           <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
             <img
               className="object-cover rounded-lg w-full h-56 md:h-64 xl:h-80"
-              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              src={EmeliasBild}
               alt="Person"
             />
             <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
               <p className="mb-1 text-lg font-bold text-gray-100">Emelia</p>
-              <p className="mb-4 text-xs text-gray-100">CTO, Lorem Inc.</p>
+              <p className="mb-4 text-xs text-gray-100">Fotograf</p>
               <p className="mb-4 text-xs tracking-wide text-gray-400">
                 Emelia har fotograferat för galleriet i många år och tar väldigt
-                fina bilder. Hon är ofta på utställningar och utgår från Timrå.
+                fina bilder. Hon är ofta på utställningar uppåt i landet. Emelia
+                utgår från Timrå.
               </p>
               <div className="flex items-center justify-center space-x-3">
                 <a
@@ -152,17 +140,17 @@ const Photographers = () => {
           <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
             <img
               className="object-cover rounded-lg w-full h-56 md:h-64 xl:h-80"
-              src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              src={LinasBild}
               alt="Person"
             />
             <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
               <p className="mb-1 text-lg font-bold text-gray-100">
-                Alice Melbourne
+                Lina Malmqvist
               </p>
-              <p className="mb-4 text-xs text-gray-100">Human Resources</p>
+              <p className="mb-4 text-xs text-gray-100">Fotograf</p>
               <p className="mb-4 text-xs tracking-wide text-gray-400">
-                Lorizzle ipsum bling bling sit amizzle, consectetuer adipiscing
-                elit.
+                Lina är nyast i gänget, en duktig fotograf med ett öga för att
+                ställa upp hundar snyggt. Lina utgår från Ängelholm.
               </p>
               <div className="flex items-center justify-center space-x-3">
                 <a
