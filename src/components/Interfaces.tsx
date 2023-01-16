@@ -34,5 +34,6 @@ export interface CountDogs {
 }
 
 export interface SearchBarProps {
-  userInput: string;
+  onSubmit: (search: string) => void;
+  onChange: (search: string) => void;
 }
