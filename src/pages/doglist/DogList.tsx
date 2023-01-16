@@ -2,8 +2,9 @@ import useDogContext from "../../hooks/use-dog-context";
 import { Dog } from "../../components/Interfaces";
 // import SideBarSearch from "../components/tailwind/Sidebar";
 
-function DogList({ dogs, isActive }) {
+function DogList() {
   //Using the context to fetch all dogs from database
+  const { dogs } = useDogContext();
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
 
   return (

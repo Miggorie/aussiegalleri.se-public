@@ -9,69 +9,24 @@ import {
 } from "@heroicons/react/20/solid";
 import SearchBar from "../../components/tailwind/searchandfilter/SearchBar";
 import DogList from "./DogList";
-import useDogContext from "../../hooks/use-dog-context";
-import { Dog } from "../../components/Interfaces";
+import {
+  filters,
+  subCategories,
+  sortOptions,
+} from "./filtercomponents/FilterCategories";
+import FilterList from "./filtercomponents/FilterList";
 
-const sortOptions = [
-  { name: "Bokstavsordning", href: "#", current: true },
-  { name: "Nyast i galleriet", href: "#", current: false },
-  { name: "Äldst i galleriet", href: "#", current: false },
-];
-const subCategories = [
-  { name: "Alla hundar", href: "#" },
-  { name: "Vuxna hundar", href: "#" },
-  { name: "Valpar", href: "#" },
-];
-const filters = [
-  {
-    id: "size",
-    name: "Kön",
-    options: [
-      { value: "2l", label: "Tik", checked: true },
-      { value: "6l", label: "Hane", checked: true },
-    ],
-  },
-
-  {
-    id: "color",
-    name: "Färg",
-    options: [
-      { value: "allColors", label: "Alla färger", checked: true },
-      { value: "Blackwhitetan", label: "Svart trefärgad", checked: false },
-      { value: "beige", label: "Röd trefärgad", checked: false },
-      { value: "blue", label: "Blue merle med tan", checked: false },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
-    ],
-  },
-  {
-    id: "category",
-    name: "Ursprungsland",
-    options: [
-      { value: "new-arrivals", label: "Alla länder", checked: true },
-      { value: "new-arrivals", label: "Sverige", checked: false },
-      { value: "sale", label: "Norge", checked: false },
-      { value: "travel", label: "Finland", checked: false },
-      { value: "organization", label: "Italien", checked: false },
-      { value: "accessories", label: "USA", checked: false },
-    ],
-  },
-];
+interface SearchBarProps {
+  userInput: string;
+}
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Sidebar() {
+export default function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const [dogListRender, setDogListRender] = useState(0);
-  const { dogs } = useDogContext();
-
-  // const handleSubmit = {
-  //   const
-
-  // }
+  const [korv, setUserInput] = useState("");
 
   return (
     <div className="bg-white">
@@ -120,80 +75,7 @@ export default function Sidebar() {
                     </button>
                   </div>
 
-                  {/* Filters */}
-                  <form className="mt-4 border-t border-gray-200">
-                    <h3 className="sr-only">Kategorier</h3>
-                    <ul
-                      role="list"
-                      className="px-2 py-3 font-medium text-gray-900"
-                    >
-                      {subCategories.map((category) => (
-                        <li key={category.name}>
-                          <a href={category.href} className="block px-2 py-3">
-                            {category.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {filters.map((section) => (
-                      <Disclosure
-                        as="div"
-                        key={section.id}
-                        className="border-t border-gray-200 px-4 py-6"
-                      >
-                        {({ open }) => (
-                          <>
-                            <h3 className="-mx-2 -my-3 flow-root">
-                              <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                <span className="font-medium text-gray-900">
-                                  {section.name}
-                                </span>
-                                <span className="ml-6 flex items-center">
-                                  {open ? (
-                                    <MinusIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  ) : (
-                                    <PlusIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  )}
-                                </span>
-                              </Disclosure.Button>
-                            </h3>
-                            <Disclosure.Panel className="pt-6">
-                              <div className="space-y-6">
-                                {section.options.map((option, optionIdx) => (
-                                  <div
-                                    key={option.value}
-                                    className="flex items-center"
-                                  >
-                                    <input
-                                      id={`filter-mobile-${section.id}-${optionIdx}`}
-                                      name={`${section.id}[]`}
-                                      defaultValue={option.value}
-                                      type="checkbox"
-                                      defaultChecked={option.checked}
-                                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                    />
-                                    <label
-                                      htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                      className="ml-3 min-w-0 flex-1 text-gray-500"
-                                    >
-                                      {option.label}
-                                    </label>
-                                  </div>
-                                ))}
-                              </div>
-                            </Disclosure.Panel>
-                          </>
-                        )}
-                      </Disclosure>
-                    ))}
-                  </form>
+                  <FilterList />
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -204,7 +86,7 @@ export default function Sidebar() {
           <div className="flex items-baseline border-b border-stone-200 pt-14 pb-8">
             <h3 className="text-2xl font-semibold">Aussiegalleriet</h3>
             <div className="w-5/6">
-              <SearchBar />
+              <SearchBar userInput={korv} />
             </div>
 
             <div className="flex items-center">

@@ -32,3 +32,7 @@ export interface CountDogs {
   total_adults: number;
   total_pups: number;
 }
+
+export interface SearchBarProps {
+  userInput: string;
+}
