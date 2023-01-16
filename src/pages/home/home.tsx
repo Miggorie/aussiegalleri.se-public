@@ -31,7 +31,7 @@ function Home() {
   return (
     <div>
       <HomeComponent />
-      <div className="bg-gray-100">
+      <div className="bg-stone-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-16 sm:py-24 sm:max-w-none lg:max-w-none lg:py-32">
             <h2 className="text-2xl font-bold text-gray-900">
@@ -41,7 +41,7 @@ function Home() {
             <div className="mt-6 space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0 sm:space-y-0 sm:gap-x-6 sm:grid sm:grid-cols-2">
               {latestDogs.map((dog: Dog) => (
                 <Link to={`/dogs/${dog.url}`}>
-                  <div key={dog.place} className="group relative">
+                  <div key={dog.headShot} className="group relative">
                     <div className="relative h-full w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-full sm:aspect-h-full sm:h-full lg:aspect-w-full lg:aspect-h-1">
                       <img
                         src={baseUrl + dog.date + "/" + dog.standLeft}

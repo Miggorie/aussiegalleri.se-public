@@ -7,14 +7,14 @@ function DogList({ searchTerm }: { searchTerm: string }) {
   const [showSearch, setShowsearch] = useState("");
   //Using the context to fetch all dogs from database
   const { dogs } = useDogContext();
+
   const filteredDogs = dogs.filter((dog) =>
     dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
-
-  if (searchTerm === "") {
+  if (typeof filteredDogs !== "string") {
   }
+  const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
 
   return (
     <div>

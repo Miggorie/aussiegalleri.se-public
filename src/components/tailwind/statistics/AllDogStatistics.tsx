@@ -24,7 +24,7 @@ const AllDogStatistics = () => {
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col lg:items-center lg:flex-row">
         <div className="flex items-center mb-6 lg:w-1/2 lg:mb-0">
-          <div className="flex items-center justify-center w-16 h-16 mr-5 rounded-full bg-indigo-50 sm:w-24 sm:h-24 xl:mr-10 xl:w-28 xl:h-28">
+          <div className="flex items-center justify-center w-16 h-16 mr-5 rounded-full bg-stone-300 sm:w-24 sm:h-24 xl:mr-10 xl:w-28 xl:h-28">
             <svg
               className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16 xl:w-20 xl:h-20"
               stroke="currentColor"
