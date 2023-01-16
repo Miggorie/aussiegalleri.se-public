@@ -9,6 +9,8 @@ import {
 } from "@heroicons/react/20/solid";
 import SearchBar from "../../components/tailwind/searchandfilter/SearchBar";
 import DogList from "./DogList";
+import useDogContext from "../../hooks/use-dog-context";
+import { Dog } from "../../components/Interfaces";
 
 const sortOptions = [
   { name: "Bokstavsordning", href: "#", current: true },
@@ -61,8 +63,15 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function DogPage() {
+export default function Sidebar() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [dogListRender, setDogListRender] = useState(0);
+  const { dogs } = useDogContext();
+
+  // const handleSubmit = {
+  //   const
+
+  // }
 
   return (
     <div className="bg-white">
