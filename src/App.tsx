@@ -3,7 +3,7 @@ import Footer from "./components/footercomponent/Footer";
 import Header from "./components/headercomponent/Navbar";
 import SingleDog from "./pages/dog";
 import About from "./pages/about/About";
-import FaqTest from "./pages/FaqTest";
+import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import Home from "./pages/home/home";
 import DogsContext from "./context/DogsContext";
@@ -27,7 +27,7 @@ function App() {
           <Route path="dogs/:name" element={<SingleDog />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="faq" element={<FaqTest />} />
+          <Route path="faq" element={<Faq />} />
         </Routes>
         <Footer />
       </BrowserRouter>
