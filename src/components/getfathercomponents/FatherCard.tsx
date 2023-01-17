@@ -2,13 +2,16 @@ import { Dog } from "../Interfaces";
 import { Link } from "react-router-dom";
 
 function FatherCardItem(father: Dog) {
-  const baseUrl =
-    "http://aussiegalleri.se/images/thumbnails/" + father.date + "/";
+  const baseUrl = "http://aussiegalleri.se/images/" + father.date + "/";
   return (
     <div>
       <section>
         <Link to={`/dogs/${father.url}`}>
-          <img src={baseUrl + father.standLeft} alt="hund" />
+          <img
+            className="rounded-lg w-full"
+            src={baseUrl + father.standLeft}
+            alt="hund"
+          />
           <div>{father.name}</div>
         </Link>
       </section>

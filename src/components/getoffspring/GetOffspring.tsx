@@ -9,7 +9,7 @@ interface Props {
 const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
   const [offspring, setOffspring] = useState([]);
   const currentUrl =
-    "http://aussiegalleri.se/api/singledog/getoffspring.php?url=" +
+    "http://aussiegalleri.se/api/singledog/getoffsprings.php?url=" +
     currentDog.url;
 
   useEffect(() => {
@@ -31,7 +31,9 @@ const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
 
   return (
     <div>
-      <h2>Helsyskon</h2>
+      <h2 className="inline-block mt-10 px-3 py-px text-m font-semibold tracking-wider text-stone-900 uppercase rounded-full bg-teal-accent-400">
+        Avkommor
+      </h2>
       {offspring?.map((offspring: Dog) => (
         <OffspringCard
           key={offspring.dogID}
