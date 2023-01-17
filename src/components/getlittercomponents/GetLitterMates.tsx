@@ -30,30 +30,38 @@ const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
 
   return (
     <div>
-      <h2 className="inline-block mt-10 px-3 py-px text-m font-semibold tracking-wider text-stone-900 uppercase rounded-full bg-teal-accent-400">
-        Kullsyskon
-      </h2>
-      <div className="bg-white">
-        <h2 className="sr-only">Hundar</h2>
-        <div className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
-          {littermate?.map((littermate: Dog) => (
-            <a
-              key={littermate.dogID}
-              href={`/dogs/${littermate.url}`}
-              className="group"
-            >
-              <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
-                <img
-                  src={baseUrl + littermate.date + "/" + littermate.standLeft}
-                  alt="hund"
-                  className="h-full w-full object-cover object-center group-hover:opacity-75"
-                />
-              </div>
-              <h3 className="mt-4 text-sm text-gray-700">{littermate.name}</h3>
-            </a>
-          ))}
-        </div>
-      </div>
+      {littermate && littermate.length > 0 ? (
+        <>
+          <h2 className="inline-block mt-10 px-3 py-px text-m font-semibold tracking-wider text-stone-900 uppercase rounded-full bg-teal-accent-400">
+            Kullsyskon
+          </h2>
+          <div className="bg-white">
+            <h2 className="sr-only">Hundar</h2>
+            <div className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
+              {littermate?.map((littermate: Dog) => (
+                <a
+                  key={littermate.dogID}
+                  href={`/dogs/${littermate.url}`}
+                  className="group"
+                >
+                  <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
+                    <img
+                      src={
+                        baseUrl + littermate.date + "/" + littermate.standLeft
+                      }
+                      alt="hund"
+                      className="h-full w-full object-cover object-center group-hover:opacity-75"
+                    />
+                  </div>
+                  <h3 className="mt-4 mb-10 text-s text-gray-700">
+                    {littermate.name}
+                  </h3>
+                </a>
+              ))}
+            </div>
+          </div>
+        </>
+      ) : null}
     </div>
   );
 };

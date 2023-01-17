@@ -12,7 +12,7 @@ function FatherCardItem(father: Dog) {
             src={baseUrl + father.standLeft}
             alt="hund"
           />
-          <div>{father.name}</div>
+          <div className="mt-4 text-s">{father.name}</div>
         </Link>
       </section>
     </div>

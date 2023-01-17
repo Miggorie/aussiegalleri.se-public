@@ -12,7 +12,7 @@ function MotherCardItem(mother: Dog) {
             src={baseUrl + mother.standLeft}
             alt="hund"
           />
-          <div>{mother.name}</div>
+          <div className="mt-4 text-s">{mother.name}</div>
         </Link>
       </section>
     </div>

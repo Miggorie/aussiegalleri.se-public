@@ -34,7 +34,9 @@ function DogList({ searchTerm }: { searchTerm: string }) {
                   className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">{filteredDog.name}</h3>
+              <h3 className="mt-4 mb-10 text-s text-gray-700">
+                {filteredDog.name}
+              </h3>
             </a>
           ))}
         </div>
