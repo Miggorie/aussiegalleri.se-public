@@ -11,6 +11,7 @@ export interface Dog {
   place?: string;
   gender?: string;
   regnr?: string;
+  colorID?: string;
 }
 
 export interface Litter {
@@ -38,13 +39,11 @@ export interface SearchBarProps {
   onChange: (search: string) => void;
 }
 
-export interface FilterBarProps {
-  onChange: (filters: FilterProps[]) => void;
-  filterTerm?: FilterProps[];
-}
-
 export interface FilterProps {
-  onChange: [];
+  filters: any;
+  filteredData: FilterProps[];
+  filterTerm?: FilterProps[];
+  onChange: (filter: FilterProps[]) => void;
   id: string;
   name: string;
   options: {

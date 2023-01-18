@@ -1,18 +1,46 @@
 import useDogContext from "../../hooks/use-dog-context";
-import { Dog } from "../../components/Interfaces";
-import { useState } from "react";
-import { FilterProps } from "../../components/Interfaces";
+import { Dog, FilterProps } from "../../components/Interfaces";
+// import { useState } from "react";
 // import SideBarSearch from "../components/tailwind/Sidebar";
 
-const DogList: React.FC = (filterTerm: any) => {
+const DogList: React.FC<{ filteredData: FilterProps[] }> = ({
+  filteredData,
+}) => {
   //Using the context to fetch all dogs from database
   const { dogs } = useDogContext();
 
-  let filteredDogs = dogs;
+  const filteredDogs = dogs.filter((dog) => {
+    if (
+      !dogs.length ||
+      !filteredData.length ||
+      !filteredData[0].options.length
+    ) {
+      console.log("här varetomt");
+      return [];
+    }
+
+    let isChecked = false;
+    filteredData[0].options.forEach((option) => {
+      if (
+        option.checked &&
+        (option.value === "Tik" || option.value === "Tane") &&
+        (dog.gender === "Tik" || dog.gender === "Hane")
+      ) {
+        console.log("här varefullt");
+        isChecked = true;
+      }
+    });
+    return isChecked;
+  });
+
   // if (searchTerm !== "") {
   //   filteredDogs = dogs.filter((dog) =>
   //     dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
   //   );
+  // }
+
+  // if (filterTerm !== "") {
+  //   console.log("hej");
   // }
 
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
