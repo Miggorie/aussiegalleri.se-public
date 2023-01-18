@@ -1,8 +1,8 @@
 import { Disclosure } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
-import { filters, subCategories, sortOptions } from "./FilterCategories";
+import { filters, subCategories } from "./FilterCategories";
 
-function FilterList() {
+function FilterList({ searchTerm }: { searchTerm: string }) {
   return (
     <div>
       {/* Filters */}

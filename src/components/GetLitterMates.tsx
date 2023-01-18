@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Dog } from "../Interfaces";
+import { Dog } from "./Interfaces";
 
 interface Props {
   currentDog: Dog;

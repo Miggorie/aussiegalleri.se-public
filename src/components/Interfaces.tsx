@@ -10,6 +10,7 @@ export interface Dog {
   isBitch?: string;
   place?: string;
   gender?: string;
+  regnr?: string;
 }
 
 export interface Litter {
@@ -34,6 +35,5 @@ export interface CountDogs {
 }
 
 export interface SearchBarProps {
-  onSubmit: (search: string) => void;
   onChange: (search: string) => void;
 }

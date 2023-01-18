@@ -24,11 +24,6 @@ function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearchSubmit = (searchTerm: string) => {
-    console.log(searchTerm);
-    setSearchTerm(searchTerm);
-  };
-
   return (
     <div>
       <div className="bg-white">
@@ -77,7 +72,7 @@ function DogPage() {
                       </button>
                     </div>
 
-                    <FilterList />
+                    <FilterList searchTerm={searchTerm} />
                   </Dialog.Panel>
                 </Transition.Child>
               </div>
@@ -89,8 +84,7 @@ function DogPage() {
               <h3 className="text-2xl font-semibold">Aussiegalleriet</h3>
               <div className="w-5/6">
                 <SearchBar
-                  onSubmit={handleSearchSubmit}
-                  onChange={handleSearchSubmit}
+                  onChange={(searchTerm) => setSearchTerm(searchTerm)}
                 />
               </div>
 

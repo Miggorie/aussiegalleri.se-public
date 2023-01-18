@@ -8,12 +8,13 @@ function DogList({ searchTerm }: { searchTerm: string }) {
   //Using the context to fetch all dogs from database
   const { dogs } = useDogContext();
 
-  const filteredDogs = dogs.filter((dog) =>
-    dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  if (typeof filteredDogs !== "string") {
+  let filteredDogs = dogs;
+  if (searchTerm !== "") {
+    filteredDogs = dogs.filter((dog) =>
+      dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   }
+
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
 
   return (
