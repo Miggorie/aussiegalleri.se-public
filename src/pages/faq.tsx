@@ -1,5 +1,5 @@
 import FaqText from "./FaqText";
-import Pirat from "../../images/Pirat2.jpg";
+import Pirat from "../images/Pirat2.jpg";
 
 const Faq = () => {
   return (

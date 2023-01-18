@@ -1,4 +1,4 @@
-import Accordion from "./Accordion";
+import Accordion from "../components/accordioncomponent/Accordion";
 
 function FaqText() {
   const items = [
@@ -36,7 +36,7 @@ function FaqText() {
 
   return (
     <div>
-      <div>
+      <div className="w-full">
         <Accordion items={items} />
       </div>
     </div>

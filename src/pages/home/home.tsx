@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Dog } from "../../components/Interfaces";
 import HomeComponent from "./HomeTailwind";
-import AllDogStatistics from "../../components/statistics/AllDogStatistics";
-import OtherStatistics from "../../components/statistics/OtherStatistics";
+import AllDogStatistics from "../../components/tailwind/statistics/AllDogStatistics";
+import OtherStatistics from "../../components/tailwind/statistics/OtherStatistics";
 
 function Home() {
   const [latestDogs, setLatestDogs] = useState([]);

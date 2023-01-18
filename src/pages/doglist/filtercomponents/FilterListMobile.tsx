@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
+<<<<<<< HEAD:src/pages/doglist/filtercomponents/FilterListMobile.tsx
 import { filters, subCategories } from "./FilterCategories";
 import { FilterProps } from "../../../components/Interfaces";
 
@@ -29,6 +30,11 @@ const FilterListMobile: React.FC<FilterProps> = ({ onChange }) => {
     onChange(currentFilterMobile);
   };
 
+=======
+import { filters, subCategories, sortOptions } from "./FilterCategories";
+
+function FilterList() {
+>>>>>>> parent of 1a6932f... better search kode, refactor and styling:src/pages/doglist/filtercomponents/FilterList.tsx
   return (
     <div>
       {/* Filters responsive for mobiles*/}
