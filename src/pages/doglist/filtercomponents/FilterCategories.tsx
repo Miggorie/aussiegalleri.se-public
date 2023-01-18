@@ -10,11 +10,11 @@ export const subCategories = [
 ];
 export const filters = [
   {
-    id: "size",
+    id: "gender",
     name: "Kön",
     options: [
-      { value: "2l", label: "Tik", checked: true },
-      { value: "6l", label: "Hane", checked: true },
+      { value: "Tik", label: "Tik", checked: true },
+      { value: "Hane", label: "Hane", checked: true },
     ],
   },
 

@@ -4,11 +4,11 @@ import Header from "./components/headercomponent/Navbar";
 import SingleDog from "./pages/dog";
 import About from "./pages/about/About";
 import Faq from "./pages/faq/Faq";
-import Contact from "./pages/Contact";
 import Home from "./pages/home/home";
 import DogsContext from "./context/DogsContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DogPage from "./pages/doglist/DogPage";
+import Contact from "./pages/contact";
 
 function App() {
   const { fetchData } = useContext(DogsContext);
