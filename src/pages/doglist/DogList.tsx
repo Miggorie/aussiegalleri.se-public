@@ -1,19 +1,19 @@
 import useDogContext from "../../hooks/use-dog-context";
 import { Dog } from "../../components/Interfaces";
 import { useState } from "react";
+import { FilterProps } from "../../components/Interfaces";
 // import SideBarSearch from "../components/tailwind/Sidebar";
 
-function DogList({ searchTerm }: { searchTerm: string }) {
-  const [showSearch, setShowsearch] = useState("");
+const DogList: React.FC = (filterTerm: any) => {
   //Using the context to fetch all dogs from database
   const { dogs } = useDogContext();
 
   let filteredDogs = dogs;
-  if (searchTerm !== "") {
-    filteredDogs = dogs.filter((dog) =>
-      dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }
+  // if (searchTerm !== "") {
+  //   filteredDogs = dogs.filter((dog) =>
+  //     dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  // }
 
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
 
@@ -44,6 +44,6 @@ function DogList({ searchTerm }: { searchTerm: string }) {
       </div>
     </div>
   );
-}
+};
 
 export default DogList;

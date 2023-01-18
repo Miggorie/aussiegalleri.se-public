@@ -1,8 +1,20 @@
+import { useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { filters, subCategories } from "./FilterCategories";
+import { FilterBarProps } from "../../../components/Interfaces";
+import { FilterProps } from "../../../components/Interfaces";
 
-function FilterList({ searchTerm }: { searchTerm: string }) {
+const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
+  const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
+
+  let filterFunction: FilterProps[] = [];
+  const handleChange = (event: any) => {
+    event.preventDefault();
+    setFilterTerm(filterFunction);
+    onChange(filterFunction);
+  };
+
   return (
     <div>
       {/* Filters */}
@@ -45,6 +57,7 @@ function FilterList({ searchTerm }: { searchTerm: string }) {
                     {section.options.map((option, optionIdx) => (
                       <div key={option.value} className="flex items-center">
                         <input
+                          onChange={handleChange}
                           id={`filter-mobile-${section.id}-${optionIdx}`}
                           name={`${section.id}[]`}
                           defaultValue={option.value}
@@ -70,6 +83,6 @@ function FilterList({ searchTerm }: { searchTerm: string }) {
       ;
     </div>
   );
-}
+};
 
 export default FilterList;

@@ -15,6 +15,7 @@ import {
   sortOptions,
 } from "./filtercomponents/FilterCategories";
 import FilterList from "./filtercomponents/FilterList";
+import { FilterProps } from "../../components/Interfaces";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -23,6 +24,7 @@ function classNames(...classes: string[]) {
 function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
 
   return (
     <div>
@@ -72,7 +74,9 @@ function DogPage() {
                       </button>
                     </div>
 
-                    <FilterList searchTerm={searchTerm} />
+                    <FilterList
+                      onChange={(filterTerm) => setFilterTerm(filterTerm)}
+                    />
                   </Dialog.Panel>
                 </Transition.Child>
               </div>
@@ -83,9 +87,9 @@ function DogPage() {
             <div className="flex items-baseline border-b border-stone-200 pt-14 pb-8">
               <h3 className="text-2xl font-semibold">Aussiegalleriet</h3>
               <div className="w-5/6">
-                <SearchBar
+                {/* <SearchBar
                   onChange={(searchTerm) => setSearchTerm(searchTerm)}
-                />
+                /> */}
               </div>
 
               <div className="flex items-center">
@@ -234,7 +238,7 @@ function DogPage() {
 
                 {/* Product grid */}
                 <div className="lg:col-span-3">
-                  <DogList searchTerm={searchTerm} />
+                  <DogList filterTerm={filterTerm} />
                   <div />
                   {/* /End replace */}
                 </div>

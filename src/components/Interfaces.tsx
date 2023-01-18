@@ -37,3 +37,19 @@ export interface CountDogs {
 export interface SearchBarProps {
   onChange: (search: string) => void;
 }
+
+export interface FilterBarProps {
+  onChange: (filters: FilterProps[]) => void;
+  filterTerm?: FilterProps[];
+}
+
+export interface FilterProps {
+  onChange: [];
+  id: string;
+  name: string;
+  options: {
+    value: string;
+    label: string;
+    checked: boolean;
+  }[];
+}
