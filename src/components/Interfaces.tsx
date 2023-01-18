@@ -10,8 +10,11 @@ export interface Dog {
   isBitch?: string;
   place?: string;
   gender?: string;
+<<<<<<< HEAD
   regnr?: string;
   colorID?: string;
+=======
+>>>>>>> parent of 1a6932f... better search kode, refactor and styling
 }
 
 export interface Litter {
@@ -36,6 +39,7 @@ export interface CountDogs {
 }
 
 export interface SearchBarProps {
+  onSubmit: (search: string) => void;
   onChange: (search: string) => void;
 }
 

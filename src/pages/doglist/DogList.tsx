@@ -9,6 +9,7 @@ const DogList: React.FC<{ filteredData: FilterProps[] }> = ({
   //Using the context to fetch all dogs from database
   const { dogs } = useDogContext();
 
+<<<<<<< HEAD
   const filteredDogs = dogs.filter((dog) => {
     if (
       !dogs.length ||
@@ -42,7 +43,14 @@ const DogList: React.FC<{ filteredData: FilterProps[] }> = ({
   // if (filterTerm !== "") {
   //   console.log("hej");
   // }
+=======
+  const filteredDogs = dogs.filter((dog) =>
+    dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+>>>>>>> parent of 1a6932f... better search kode, refactor and styling
 
+  if (typeof filteredDogs !== "string") {
+  }
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
 
   return (
