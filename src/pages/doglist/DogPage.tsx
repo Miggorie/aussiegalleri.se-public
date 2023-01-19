@@ -15,11 +15,19 @@ import {
   sortOptions,
 } from "./filtercomponents/FilterCategories";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import FilterMobile from "./filtercomponents/FilterMobile";
 import FilterWebsite from "./filtercomponents/FilterWebsite";
 =======
+=======
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
 import { FilterProps } from "../../components/Interfaces";
 >>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
+
+// export interface FilterBarProps {
+//   onChange: (filter: FilterProps[]) => void;
+//   filterTerm?: FilterProps[];
+// }
 
 // export interface FilterBarProps {
 //   onChange: (filter: FilterProps[]) => void;
@@ -33,14 +41,20 @@ function classNames(...classes: string[]) {
 function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
   const [searchTerm, setSearchTerm] = useState("");
 =======
+=======
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
   // const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchSubmit = (searchTerm: string) => {
     console.log(searchTerm);
     setSearchTerm(searchTerm);
   };
+<<<<<<< HEAD
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
+=======
 >>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
 
   return (
@@ -92,9 +106,12 @@ function DogPage() {
                     </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <FilterMobile />
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
                     {/* Filters responsive for mobiles*/}
                     <form className="mt-4 border-t border-gray-200">
                       <h3 className="sr-only">Kategorier</h3>
@@ -173,6 +190,9 @@ function DogPage() {
 =======
                     <FilterList />
 >>>>>>> parent of 1a6932f... better search kode, refactor and styling
+<<<<<<< HEAD
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
+=======
 >>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
                   </Dialog.Panel>
                 </Transition.Child>
@@ -185,11 +205,14 @@ function DogPage() {
               <h3 className="text-2xl font-semibold">Aussiegalleriet</h3>
               <div className="w-5/6">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <SearchBar
                   onChange={(searchTerm) => setSearchTerm(searchTerm)}
                 />
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
                 {/* <SearchBar
                   onChange={(searchTerm) => setSearchTerm(searchTerm)}
                 /> */}
@@ -199,6 +222,9 @@ function DogPage() {
                   onChange={handleSearchSubmit}
                 />
 >>>>>>> parent of 1a6932f... better search kode, refactor and styling
+<<<<<<< HEAD
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
+=======
 >>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
               </div>
 
@@ -273,12 +299,15 @@ function DogPage() {
 
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <FilterWebsite />
 
                 {/* Product grid */}
                 <div className="lg:col-span-3">
                   <DogList searchTerm={searchTerm} />
 =======
+=======
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
                 {/* Filters responsiove for websites*/}
                 <form className="hidden lg:block">
                   <h3 className="sr-only">Kategorier</h3>
@@ -360,6 +389,9 @@ function DogPage() {
                     filteredData={filteredData}
                     filterTerm={filterTerm}
                   />
+<<<<<<< HEAD
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
+=======
 >>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
                   <div />
                   {/* /End replace */}

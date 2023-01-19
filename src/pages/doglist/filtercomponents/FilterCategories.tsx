@@ -13,7 +13,11 @@ export const subCategories = [
 export const filters = [
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     id: "gender",
+=======
+    id: "Kön",
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
 =======
     id: "Kön",
 >>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e

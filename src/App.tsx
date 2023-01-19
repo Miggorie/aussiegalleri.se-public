@@ -4,8 +4,11 @@ import Header from "./components/headercomponent/Navbar";
 import SingleDog from "./pages/dog";
 import About from "./pages/about/About";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Faq from "./pages/faq/Faq";
 =======
+=======
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 >>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e

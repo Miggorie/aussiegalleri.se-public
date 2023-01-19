@@ -5,6 +5,7 @@ import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { filters, subCategories } from "./FilterCategories";
 import { FilterProps } from "../../../components/Interfaces";
 
+<<<<<<< HEAD:src/pages/doglist/filtercomponents/FilterListMobile.tsx
 <<<<<<< HEAD:src/pages/doglist/filtercomponents/FilterMobile.tsx
 function FilterMobile() {
   // const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
@@ -16,6 +17,8 @@ function FilterMobile() {
   //   onChange(filterFunction);
   // };
 =======
+=======
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e:src/pages/doglist/filtercomponents/FilterList.tsx
 const FilterListMobile: React.FC<FilterProps> = ({ onChange }) => {
   const [currentFilterMobile, setCurrentFilterMobile] = useState<FilterProps[]>(
     []
@@ -45,6 +48,12 @@ const FilterListMobile: React.FC<FilterProps> = ({ onChange }) => {
 =======
 import { filters, subCategories, sortOptions } from "./FilterCategories";
 
+<<<<<<< HEAD:src/pages/doglist/filtercomponents/FilterListMobile.tsx
+=======
+=======
+import { filters, subCategories, sortOptions } from "./FilterCategories";
+
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e:src/pages/doglist/filtercomponents/FilterList.tsx
 function FilterList() {
 >>>>>>> parent of 1a6932f... better search kode, refactor and styling:src/pages/doglist/filtercomponents/FilterList.tsx
   return (
@@ -117,8 +126,12 @@ function FilterList() {
   );
 }
 
+<<<<<<< HEAD:src/pages/doglist/filtercomponents/FilterListMobile.tsx
 <<<<<<< HEAD:src/pages/doglist/filtercomponents/FilterMobile.tsx
 export default FilterMobile;
 =======
 export default FilterListMobile;
 >>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e:src/pages/doglist/filtercomponents/FilterListMobile.tsx
+=======
+export default FilterListMobile;
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e:src/pages/doglist/filtercomponents/FilterList.tsx

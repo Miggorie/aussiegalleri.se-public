@@ -1,5 +1,6 @@
 import useDogContext from "../../hooks/use-dog-context";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Dog } from "../../components/Interfaces";
 import { useState, useEffect } from "react";
 // import SideBarSearch from "../components/tailwind/Sidebar";
@@ -26,6 +27,18 @@ const DogList: React.FC<{ filteredData: FilterProps[] }> = ({
   //Using the context to fetch all dogs from database
   const { dogs } = useDogContext();
 
+=======
+import { Dog, FilterProps } from "../../components/Interfaces";
+// import { useState } from "react";
+// import SideBarSearch from "../components/tailwind/Sidebar";
+
+const DogList: React.FC<{ filteredData: FilterProps[] }> = ({
+  filteredData,
+}) => {
+  //Using the context to fetch all dogs from database
+  const { dogs } = useDogContext();
+
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
 <<<<<<< HEAD
   const filteredDogs = dogs.filter((dog) => {
     if (
@@ -67,6 +80,18 @@ const DogList: React.FC<{ filteredData: FilterProps[] }> = ({
   );
 >>>>>>> parent of 1a6932f... better search kode, refactor and styling
 
+<<<<<<< HEAD
+=======
+  // if (filterTerm !== "") {
+  //   console.log("hej");
+  // }
+=======
+  const filteredDogs = dogs.filter((dog) =>
+    dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+>>>>>>> parent of 1a6932f... better search kode, refactor and styling
+
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
   if (typeof filteredDogs !== "string") {
   }
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
