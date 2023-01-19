@@ -3,7 +3,12 @@ import Footer from "./components/footercomponent/Footer";
 import Header from "./components/headercomponent/Navbar";
 import SingleDog from "./pages/dog";
 import About from "./pages/about/About";
+<<<<<<< HEAD
 import Faq from "./pages/faq/Faq";
+=======
+import Faq from "./pages/Faq";
+import Contact from "./pages/Contact";
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
 import Home from "./pages/home/home";
 import DogsContext from "./context/DogsContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

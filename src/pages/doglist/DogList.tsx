@@ -1,4 +1,5 @@
 import useDogContext from "../../hooks/use-dog-context";
+<<<<<<< HEAD
 import { Dog } from "../../components/Interfaces";
 import { useState, useEffect } from "react";
 // import SideBarSearch from "../components/tailwind/Sidebar";
@@ -14,7 +15,60 @@ function DogList({ searchTerm }: { searchTerm: string }) {
       dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
+=======
+import { Dog, FilterProps } from "../../components/Interfaces";
+// import { useState } from "react";
+// import SideBarSearch from "../components/tailwind/Sidebar";
 
+const DogList: React.FC<{ filteredData: FilterProps[] }> = ({
+  filteredData,
+}) => {
+  //Using the context to fetch all dogs from database
+  const { dogs } = useDogContext();
+
+<<<<<<< HEAD
+  const filteredDogs = dogs.filter((dog) => {
+    if (
+      !dogs.length ||
+      !filteredData.length ||
+      !filteredData[0].options.length
+    ) {
+      console.log("här varetomt");
+      return [];
+    }
+
+    let isChecked = false;
+    filteredData[0].options.forEach((option) => {
+      if (
+        option.checked &&
+        (option.value === "Tik" || option.value === "Tane") &&
+        (dog.gender === "Tik" || dog.gender === "Hane")
+      ) {
+        console.log("här varefullt");
+        isChecked = true;
+      }
+    });
+    return isChecked;
+  });
+
+  // if (searchTerm !== "") {
+  //   filteredDogs = dogs.filter((dog) =>
+  //     dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  // }
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
+
+  // if (filterTerm !== "") {
+  //   console.log("hej");
+  // }
+=======
+  const filteredDogs = dogs.filter((dog) =>
+    dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+>>>>>>> parent of 1a6932f... better search kode, refactor and styling
+
+  if (typeof filteredDogs !== "string") {
+  }
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
 
   return (

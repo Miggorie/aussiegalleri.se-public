@@ -1,3 +1,5 @@
+import { FilterProps } from "../../../components/Interfaces";
+
 export const sortOptions = [
   { name: "Bokstavsordning", href: "#", current: true },
   { name: "Nyast i galleriet", href: "#", current: false },
@@ -10,7 +12,11 @@ export const subCategories = [
 ];
 export const filters = [
   {
+<<<<<<< HEAD
     id: "gender",
+=======
+    id: "Kön",
+>>>>>>> 6cb8395e70e6bc96de8030ffa4368e08aabffb4e
     name: "Kön",
     options: [
       { value: "Tik", label: "Tik", checked: true },

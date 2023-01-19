@@ -1,17 +1,22 @@
 import { useState } from "react";
 import { SearchBarProps } from "../../components/Interfaces";
 
-const SearchBar: React.FC<SearchBarProps> = ({ onChange }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSubmit, onChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit(searchTerm);
+  };
 
   const handleChange = (event: any) => {
     event.preventDefault();
     setSearchTerm(event.target.value);
-    onChange(event.target.value);
+    onChange(searchTerm);
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="max-w-md mx-auto">
         <div className="relative flex items-center w-full h-12 rounded-lg ">
           <div className="grid place-items-center h-full w-12 text-gray-300">
